@@ -28,11 +28,8 @@ exports.partialupdateproduct = (req, res) => {
     const { id } = req.params
     const itemtoupdate = items.find(i => i.id === parseInt(id))
     if (!itemtoupdate)
-<<<<<<< HEAD
-        return res.status(404).send("Iutem not Found")
-=======
         return res.status(404).send("Item not Found")
->>>>>>> 44cdbf9 (corrected patchupdate)
+
     if (req.body.name !== undefined)
         itemtoupdate.name = req.body.name
     if (req.body.quantity !== undefined)

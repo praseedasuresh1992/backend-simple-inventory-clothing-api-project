@@ -29,11 +29,11 @@ exports.partialupdateproduct = (req, res) => {
     const itemtoupdate = items.find(i => i.id === parseInt(id))
     if (!itemtoupdate)
         return res.status(404).send("Iutem not Found")
-    if (itemtoupdate.name !== undefined)
+    if (req.body.name !== undefined)
         itemtoupdate.name = req.body.name
-    if (itemtoupdate.quantity !== undefined)
+    if (req.body.quantity !== undefined)
         itemtoupdate.quantity = req.body.quantity
-    if (itemtoupdate.price !== undefined)
+    if (req.body.price !== undefined)
         itemtoupdate.price = req.body.price
     res.status(200).send(items)
 
